@@ -1,0 +1,243 @@
+running turboquant:
+
+
+.\llama-cli.exe -m models\Qwen3.5-4B-Q4_K_M.gguf -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+.\llama-server.exe -m models\Qwen3.5-4B-Q4_K_M.gguf -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+server:
+http://127.0.0.1:8080/
+
+
+
+Qwen3.5-9B-Q4_K_M.gguf
+gemma-4-E4B-it-Q4_K_M.gguf
+
+
+
+
+.\llama-cli.exe -m models\Qwen3.5-9B-Q4_K_M.gguf -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+.\llama-server.exe -m models\Qwen3.5-9B-Q4_K_M.gguf  -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+.\llama-server.exe -m models\gemma-4-E4B-it-Q4_K_M.gguf  -ngl 99 -c 131072 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+.\llama-server.exe -m models\Qwen3VL-4B-Instruct-Q4_K_M.gguf -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+
+Usage: D:\AI\devlopment(llamacpp)\turboquant\llama-mtmd-cli.exe [options] -m <model> --mmproj <mmproj> --image <image> --audio <audio> -p <prompt>
+
+.\llama-mtmd-cli.exe -m models\Qwen3VL-4B-Instruct-Q4_K_M.gguf --mmproj models/mmproj-Qwen3VL-4B-Instruct-Q8_0.gguf -ngl 99 -c 262144 -fa on --cache-type-k turbo3 --cache-type-v turbo3
+
+
+
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-APEX-Quality.gguf --port 8080 --host 0.0.0.0 -fa on --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 30 -ngl 99 --no-mmap --mlock --jinja -c 256000 
+
+
+
+FOR APEX MTP FILE:
+llama-server -m Carnice-Qwen3.6-MoE-35B-A3B-APEX-MTP-I-Balanced.gguf --draft-mtp
+
+
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-APEX-Quality.gguf --port 8080 --host 0.0.0.0 -fa on --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+.\llama-server.exe -m models\gemma-4-26B-A4B-it-MXFP4_MOE.gguf --port 8080 --host 0.0.0.0 -fa on --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+.\llama-server.exe -m models\gemma-4-26B-A4B-it-MXFP4_MOE.gguf --port 8080 --host 0.0.0.0 -fa 1 --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+llama-server -m Carnice-Qwen3.6-MoE-35B-A3B-APEX-MTP-I-Balanced.gguf 
+
+
+
+.\llama-server.exe -m models\Carnice-Qwen3.6-MoE-35B-A3B-APEX-MTP-Compact.gguf --draft-mtp --port 8080 --host 0.0.0.0 -fa 1 --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+.\llama-server.exe -m models\Carnice-Qwen3.6-MoE-35B-A3B-APEX-I-Compact.gguf --port 8080 --host 0.0.0.0 -fa 1 --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+.\llama-cli.exe -m models\Carnice-Qwen3.6-MoE-35B-A3B-APEX-I-Compact.gguf --port 8080 --host 0.0.0.0 -fa 1 --cache-type-k turbo4 --cache-type-v turbo3 --n-cpu-moe 33 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+
+
+Carnice-Qwen3.6-MoE-35B-A3B-APEX-I-Compact.gguf
+
+
+.\llama-server.exe -m Qwen3.6-35B-A3B-APEX-MTP-I-Balanced.gguf --draft-mtp
+
+
+
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-APEX-MTP-Compact.gguf --port 8080 --host 0.0.0.0 -fa 1 --cache-type-k tbq4_0 --cache-type-v tbq4_0 --n-cpu-moe 36 -ngl 99 --no-mmap --mlock --jinja -c 256000
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-APEX-MTP-Compact.gguf --spec-type mtp --spec-draft-n-max 3 -ctk tbq4_0 -ctv tbq4_0 -c 262144 -ngl 99 --flash-attn on --mlock -t 8 -ub 32 -np 1 --no-warmup --n-cpu-moe 36
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-APEX-MTP-Compact.gguf --spec-type mtp --spec-draft-n-max 3 -ctk planar3_0 -ctv planar3_0 -c 262144 -ngl 99 --flash-attn on --mlock -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+.\llama-server.exe -m models\Carnice-Qwen3.6-MoE-35B-A3B-APEX-I-Compact.gguf --port 3000 --host 0.0.0.0  -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+.\llama-server.exe -m models\Qwen3.6-35B-A3B-Uncensored-Genesis-APEX-Compact.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+.\llama-server.exe --model .\models\gemma\gemma-4-26B_q4_0-it.gguf --mmproj .\models\gemma\gemma-4-26B-it-mmproj.gguf -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+.\llama-server.exe --model .\models\gemma\gemma-4-26B_q4_0-it.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 20
+
+.\llama-server.exe --model .\models\Nemotron-3-Nano-Omni-30B-A3B-Reasoning-APEX-I-Compact.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+
+.\llama-server.exe -m .\models\Nemotron-3-Nano-Omni-30B-A3B-Reasoning-APEX-I-Compact.gguf --port 3000 --host 0.0.0.0  -ngl 99 -c 262144 -fa on --cache-type-k turbo4 --cache-type-v turbo4 -c 200000 --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+.\llama-server.exe --model .\models\Qwen3.6-35B-A3B-Uncensored-Claude-4.6-Genesis-APEX-Compact.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+
+
+.\llama-server.exe --model .\models\LFM2-24B-A2B-MXFP4_MOE.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+
+.\llama-mtmd-cli.exe --model .\models\gemma\gemma-4-12b-it-qat-q4_0.gguf --mmproj .\models\gemma\mmproj-gemma-4-12b-it-qat-q4_0.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup 
+
+
+.\llama-server.exe --model .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36
+
+
+
+.\llama-server.exe --model .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 8 -ub 32 --parallel 1 --no-warmup --n-cpu-moe 36 
+
+
+llama-bench \
+    -m ~/models/Qwen3.6-28B-REAP20-A3B-Q4_K_M.gguf \
+    -ngl 99 \
+    -p 512 \
+    -n 128 \
+    -t 1,2,3,4 \
+    --n-cpu-moe 17
+	
+	
+	
+.\llama-bench --model .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 1,2,3,4,5,6,7,8 -ub 32 -p 512 -n 128 --parallel 1 --no-warmup --n-cpu-moe 36 
+
+
+llama-bench -m .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ngl 99 -p 512 -n 128 -t 1,2,3,4 --n-cpu-moe 36 -ub 256,512,1024,2048
+
+llama-bench -m .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ngl 99 -p 512 -n 128 -t 7 --n-cpu-moe 36 -ub 256,512,1024,2048
+
+
+
+need to test:
+llama-bench -m .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ngl 99 -p 512 -n 128 -t 7 --n-cpu-moe 36 -ub 1024
+
+
+
+
+.\llama-bench --model .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ctk tbq4_0 -ctv tbq4_0 -c 200000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 32 -p 512 -n 128 --parallel 1 --no-warmup --n-cpu-moe 36 
+
+
+
+.\llama-bench -m .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf -ngl 99 -p 512 -n 128 -t 7 --n-cpu-moe 36 -ub 512 -b 2048
+
+.\llama-bench -m .\models\Qwen3.6-35B-A3B-Uncensored-Claude-4.6-Genesis-APEX-Compact.gguf -ngl 99 -p 512 -n 128 -t 7 --n-cpu-moe 36 -ub 512 -b 2048
+
+
+
+.\llama-server.exe --model .\models\Qwopus3.6-35B-A3B-v1-APEX-I-Quality.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+.\llama-server.exe --model models\Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf --mmproj models/mmproj-Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-f16.gguf -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048
+
+
+.\llama-server.exe --model models\Huihui-Qwythos-9B-Claude-Mythos-5-1M-abliterated-Q4_K.gguf  -ctk tbq4_0 -ctv tbq4_0 -c 512000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 --temp 0.6 --top-p 0.95 --top-k 20 --repeat-penalty 1.05
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwen3-VL-30B-A3B-Instruct-Q4_K_M.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-F16.gguf -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 --n-cpu-moe 36
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwythos-9B-Claude-Mythos-5-1M-Q4_K_M.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-Qwythos-9B-Claude-Mythos-5-1M-F16.gguf --port 3000 --host 0.0.0.0  -ctk tbq4_0 -ctv tbq4_0 -c 512000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 
+
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwopus3.6-35B-A3B-Coder-MTP-Q4_K_M.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwopus3.6-35B-A3B-Coder-MTP-Q4_K_M.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-F32.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\14b\Qwen3.6-14B-A3B-FableVibes-Q8_0.gguf --mmproj C:\Users\rakes\Downloads\models\14b\Qwen3.6-14B-A3B-FableVibes-mmproj-Q8_0.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\ornith-1.0-35b-Q4_K_M.gguf --mmproj  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\gemma-4-E4B-it-ultra-uncensored-heretic-mxfp4.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-gemma-4-E4B-it-ultra-uncensored-heretic-f16.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 
+
+
+thinking off:
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\gemma-4-E4B-it-ultra-uncensored-heretic-mxfp4.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-gemma-4-E4B-it-ultra-uncensored-heretic-f16.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 --reasoning off 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\gemma-4-E4B-it-ultra-uncensored-heretic-mxfp4.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 --reasoning off 
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\DARK-LUST-ROLEPLAY-3.2-1B.Q8_0.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\LFM2.5-350M-Q8_0.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 --temp 0.1 --top-k 50 --repeat-penalty 1.05
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\MiniCPM5-1B-Claude-Opus-Fable5-Thinking-Q8_0.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048
+
+
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\MiniCPM5-1B-Claude-Opus-Fable5-Thinking-Q8_0.gguf  --port 3000 --host 0.0.0.0 -fa on --cache-type-k turbo4 --cache-type-v turbo4 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 512 --parallel 1 --no-warmup -b 2048
+
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwopus3.6-35B-A3B-Coder-MTP-Q4_K_M.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-F32.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja --chat-template-file chat_template.jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\qwen-agentworld-35b-a3b-mxfp4_moe.gguf  --port 3000 --host 0.0.0.0 -fa on --cache-type-k turbo4 --cache-type-v turbo4 -c 64000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja --chat-template-file chat_template.jinja -t 7 -ub 512 --parallel 1 --no-warmup --n-cpu-moe 36 -b 2048 
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Bonsai-27B-Q1_0.gguf  --port 3000 --host 0.0.0.0 -fa on -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --mlock --no-mmap -t 7 -ub 512 --parallel 1 --no-warmup  -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\MiniCPM5-1B-Claude-Opus-Fable5-Thinking-Q8_0.gguf  --port 3000 --host 0.0.0.0 -fa on -ctk tbq4_0 -ctv tbq4_0 -c 128000 -ngl 99 --mlock --no-mmap -t 7 -ub 512 --parallel 1 --no-warmup  -b 2048 
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\MiniCPM5-1B-Claude-Opus-Fable5-Thinking-Q8_0.gguf  --port 3000 --host 0.0.0.0 -fa 1 --cache-type-k turbo3 --cache-type-v turbo3 -ngl 99 --mlock --no-mmap -t 7 -ub 512 --parallel 1 --no-warmup  -b 2048 
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\models\Qwythos-9B-v2-MTP-Q4_K_M.gguf --mmproj C:\Users\rakes\Downloads\models\mmproj-Qwythos-9B-v2-BF16.gguf --port 3000 --host 0.0.0.0 -fa on -ctk tbq4_0 -ctv tbq4_0 -c 262144 -ngl 99 --mlock --no-mmap -t 7 -ub 512 --parallel 1 --no-warmup -b 2048 
+
+
+--flash-attn on
+
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\Ornith\Ornith-1.0-35B-A3B-MXFP4_MOE_Q8_0_F16-Imatrix.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja -t 7 -ub 256 -b 2048 --parallel 1 --no-warmup --n-cpu-moe 36 --temp 0.55 --top-k 15 --top-p 0.90 --min-p 0.12 --repeat-penalty 1.08 --presence-penalty 0.0 --dry-multiplier 0.8 --dry-base 1.75 --dry-allowed-length 3 --dry-penalty-last-n 1024 --dry-sequence-breaker "\n" --dry-sequence-breaker "```\n" --dry-sequence-breaker ":" --dry-sequence-breaker "\t" --dry-sequence-breaker "\"" --dry-sequence-breaker "|" --dry-sequence-breaker "-" --dry-sequence-breaker "}" --dry-sequence-breaker "]" --samplers "top_k;top_p;min_p;temp;dry"
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\Ornith\Ornith-1.0-35B-A3B-MXFP4_MOE_Q8_0_F16-Imatrix.gguf --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja --chat-template-file chat_template.jinja -t 7 -ub 256 -b 2048 --parallel 1 --no-warmup --n-cpu-moe 36 --temp 0.55 --top-k 15 --top-p 0.90 --min-p 0.12 --repeat-penalty 1.08 --presence-penalty 0.0 --dry-multiplier 0.8 --dry-base 1.75 --dry-allowed-length 3 --dry-penalty-last-n 1024
+
+
+.\llama-server.exe --model C:\Users\rakes\Downloads\Ornith\Ornith-1.0-35B-MXFP4_MOE.gguf --mmproj C:\Users\rakes\Downloads\Ornith\mmproj-F16.gguf  --port 3000 --host 0.0.0.0 -ctk tbq4_0 -ctv tbq4_0 -c 256000 -ngl 99 --flash-attn on --mlock --no-mmap --jinja --chat-template-file chat_template.jinja -t 7 -ub 256 -b 2048 --parallel 1 --no-warmup --n-cpu-moe 33 --temp 0.55 --top-k 15 --top-p 0.90 --min-p 0.12 --repeat-penalty 1.08 --presence-penalty 0.0 --dry-multiplier 0.8 --dry-base 1.75 --dry-allowed-length 3 --dry-penalty-last-n 1024
