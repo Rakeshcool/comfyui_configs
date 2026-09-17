@@ -4,15 +4,20 @@ comfyui:
     checkpoints: checkpoints/
     configs: configs/
     loras: loras/
-    vae: vae/
+
+    vae: |
+        vae/
+        C:/Users/rakes/Downloads/minimax/models/vae/
 
     text_encoders: |
-         text_encoders/
-         clip/
+        text_encoders/
+        clip/
+        C:/Users/rakes/Downloads/minimax/models/text_encoders/
 
     diffusion_models: |
-         unet/
-         diffusion_models/
+        unet/
+        diffusion_models/
+        C:/Users/rakes/Downloads/minimax/models/diffusion_models/
 
     clip_vision: clip_vision/
     style_models: style_models/
@@ -21,8 +26,8 @@ comfyui:
     vae_approx: vae_approx/
 
     controlnet: |
-         controlnet/
-         t2i_adapter/
+        controlnet/
+        t2i_adapter/
 
     gligen: gligen/
     upscale_models: upscale_models/
